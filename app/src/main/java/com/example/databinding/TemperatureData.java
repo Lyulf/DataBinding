@@ -7,7 +7,7 @@ public class TemperatureData extends BaseObservable{
     private String location;
     private String celsius;
 
-    public TemperatureData(String location, String celsius) {
+    TemperatureData(String location, String celsius) {
         this.location = location;
         this.celsius = celsius;
     }
@@ -29,6 +29,7 @@ public class TemperatureData extends BaseObservable{
 
     public void setLocation(String location) {
         this.location = location;
-        notifyPropertyChanged(BR.location);
+        // no notification = no updating value
+//        notifyPropertyChanged(BR.location);
     }
 }
