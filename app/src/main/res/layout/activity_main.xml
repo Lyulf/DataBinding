@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:text='@{`` + temp.celsius}'
+                android:text="@={`` + temp.celsius}"
                 android:textSize="20sp"
                 />
 
