@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
     <data>
@@ -10,42 +11,55 @@
         />
     </data>
 
-    <GridLayout
-        android:id="@+id/grid"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:rowCount="2"
-        android:columnCount="2">
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/loc_edit"
-            android:layout_width="wrap_content"
+        <GridLayout
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@={temp.location}"
-            android:textSize="20sp"
-            />
+            android:rowCount="2"
+            android:columnCount="2">
 
-        <TextView
-            android:id="@+id/loc_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text='@{@string/location + ": " + temp.location}'
-            android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/loc_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textAutoCorrect"
+                android:text="@={temp.location}"
+                android:textSize="20sp"
+                />
 
-        <EditText
-            android:id="@+id/temp_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@={temp.celsius}"
-            android:textSize="20sp"
-            />
+            <TextView
+                android:id="@+id/loc_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{@string/location + ": " + temp.location}'
+                android:textSize="20sp"/>
 
-        <TextView
-            android:id="@+id/temp_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text='@{"Temperature: " + temp.celsius}'
-            android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/temp_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text='@{`` + temp.celsius}'
+                android:textSize="20sp"
+                />
 
-    </GridLayout>
+            <TextView
+                android:id="@+id/temp_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{@string/temperature + ": " + temp.celsius + "°C"}'
+                android:textSize="20sp"/>
+
+        </GridLayout>
+
+        <include
+            android:id="@+id/increment_layout"
+            layout="@layout/incrementation"
+            bind:temp="@{temp}"/>
+    </LinearLayout>
 </layout>
