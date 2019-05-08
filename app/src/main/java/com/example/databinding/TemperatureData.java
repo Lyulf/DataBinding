@@ -5,15 +5,15 @@ import android.databinding.Bindable;
 
 public class TemperatureData extends BaseObservable{
     private String location;
-    private Double celsius;
+    private double celsius;
 
-    TemperatureData(String location, Double celsius) {
+    TemperatureData(String location, double celsius) {
         this.location = location;
         this.celsius = celsius;
     }
 
     @Bindable
-    public Double getCelsius() {
+    public double getCelsius() {
         return celsius;
     }
 
@@ -22,7 +22,7 @@ public class TemperatureData extends BaseObservable{
         return location;
     }
 
-    public void setCelsius(Double celsius) {
+    public void setCelsius(double celsius) {
         this.celsius = celsius;
         notifyPropertyChanged(BR.celsius);
     }
@@ -33,12 +33,10 @@ public class TemperatureData extends BaseObservable{
     }
 
     public void incrementCelsius() {
-        celsius++;
-        notifyPropertyChanged(BR.celsius);
+        setCelsius(celsius + 1);
     }
 
     public void decrementCelsius() {
-        celsius--;
-        notifyPropertyChanged(BR.celsius);
+        setCelsius(celsius - 1);
     }
 }

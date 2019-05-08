@@ -13,22 +13,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        temp = new TemperatureData("Lodz", 10.0);
+        String location;
+        double celsius;
         if(savedInstanceState != null) {
-            String location = savedInstanceState.getString("location");
-            Double celsius = savedInstanceState.getDouble("celsius");
-            temp.setLocation(location);
-            temp.setCelsius(celsius);
+            location = savedInstanceState.getString("location");
+            celsius = savedInstanceState.getDouble("celsius");
+        } else {
+            location = "Lodz";
+            celsius = 10.0;
         }
+        temp = new TemperatureData(location, celsius);
         binding.setTemp(temp);
     }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        if(savedInstanceState != null) {
-            savedInstanceState.putString("location", temp.getLocation());
-            savedInstanceState.putDouble("celsius", temp.getCelsius());
-        }
         super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putString("location", temp.getLocation());
+        savedInstanceState.putDouble("celsius", temp.getCelsius());
     }
 }

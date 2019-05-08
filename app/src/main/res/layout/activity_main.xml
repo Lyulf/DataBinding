@@ -24,7 +24,7 @@
             android:columnCount="2">
 
             <EditText
-                android:id="@+id/loc_edit"
+                android:id="@+id/Location_EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textAutoCorrect"
@@ -33,33 +33,33 @@
                 />
 
             <TextView
-                android:id="@+id/loc_view"
+                android:id="@+id/Location_TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text='@{@string/location + ": " + temp.location}'
+                android:text='@{@string/location + `: ` + temp.location}'
                 android:textSize="20sp"/>
 
             <EditText
-                android:id="@+id/temp_edit"
+                android:id="@+id/Celsius_EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="number"
+                android:inputType="numberSigned|numberDecimal"
                 android:text="@={`` + temp.celsius}"
                 android:textSize="20sp"
                 />
 
             <TextView
-                android:id="@+id/temp_view"
+                android:id="@+id/Celsius_TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text='@{@string/temperature + ": " + temp.celsius + "°C"}'
+                android:text='@{@string/temperature + `: ` + temp.celsius + `°C`}'
                 android:textSize="20sp"/>
 
         </GridLayout>
 
         <include
-            android:id="@+id/increment_layout"
-            layout="@layout/incrementation"
+            android:id="@+id/Example_Layout"
+            layout="@layout/example_layout"
             bind:temp="@{temp}"/>
     </LinearLayout>
 </layout>

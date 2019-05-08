@@ -2,4 +2,6 @@
     <string name="app_name">DataBinding</string>
     <string name="location">Location</string>
     <string name="temperature">Temperature</string>
+    <string name="increment">+</string>
+    <string name="decrement">-</string>
 </resources>
