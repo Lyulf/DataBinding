@@ -9,19 +9,19 @@ public class TemperatureData {
         this.celsius = celsius;
     }
 
-    double getCelsius() {
+    public double getCelsius() {
         return celsius;
     }
 
-    void setCelsius(double celsius) {
+    public void setCelsius(double celsius) {
         this.celsius = celsius;
     }
 
-    String getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    void setLocation(String location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 }
