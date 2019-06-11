@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateValues() {
-        celsiusTextView.setText(getString(R.string.temperature) + ": " + temperature.getCelsius() + "°C");
-        locationTextView.setText(getString(R.string.location) + ": " + temperature.getLocation());
+        celsiusTextView.setText(getString(R.string.temperature) + temperature.getCelsius() + "°C");
+        locationTextView.setText(getString(R.string.location) + temperature.getLocation());
     }
 }
